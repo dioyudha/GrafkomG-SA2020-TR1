@@ -1,6 +1,13 @@
 #include <gl/glut.h>
 
+bool fullscreen = false;
+bool mouseDown = false;
 
+float xrot = 0.0f;
+float yrot = 0.0f;
+
+float xdiff = 0.0f;
+float ydiff = 0.0f;
 
 void drawSquare()
 {
@@ -214,3 +221,87 @@ void drawSquare()
 	glFlush();
 }
 
+bool init()
+{
+	glClearColor(0.0f, 1.0f, 1.0f, 0.0f);
+	glEnable(GL_DEPTH_TEST);
+	glDepthFunc(GL_LEQUAL);
+	glClearDepth(1.0f);
+	return true;
+}
+
+void display()
+{
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+	glLoadIdentity();
+
+	gluLookAt(
+		0.0f, 0.0f, 3.0f,
+		0.0f, 0.0f, 0.0f,
+		0.0f, 1.0f, 0.0f);
+
+	glRotatef(xrot, 1.0f, 0.0f, 0.0f);
+	glRotatef(yrot, 0.0f, 1.0f, 0.0f);
+
+	drawSquare();
+	glutSwapBuffers();
+}
+
+void resize(int w, int h)
+{
+	glMatrixMode(GL_PROJECTION);
+	glLoadIdentity();
+
+	glViewport(0, 0, w, h);
+
+	gluPerspective(45.0f, 1.0f * w / h, 1.0f, 100.0f);
+
+	glMatrixMode(GL_MODELVIEW);
+	glLoadIdentity();
+}
+
+
+void mouse(int button, int state, int x, int y)
+{
+	if (button == GLUT_LEFT_BUTTON && state == GLUT_DOWN)
+	{
+		mouseDown = true;
+
+		xdiff = x - yrot;
+		ydiff = -y + xrot;
+	}
+	else
+		mouseDown = false;
+}
+
+void mouseMotion(int x, int y)
+{
+	if (mouseDown)
+	{
+		yrot = x - xdiff;
+		xrot = y + ydiff;
+
+		glutPostRedisplay();
+	}
+}
+
+int main(int argc, char* argv[])
+{
+	glutInit(&argc, argv);
+	glutInitWindowSize(1366, 768);
+	glutInitDisplayMode(GLUT_RGB | GLUT_DOUBLE);
+
+	glutCreateWindow("Plaza Indonesia");
+
+	glutDisplayFunc(display);
+	glutMouseFunc(mouse);
+	glutMotionFunc(mouseMotion);
+	glutReshapeFunc(resize);
+
+	if (!init())
+		return 1;
+
+	glutMainLoop();
+
+	return 0;
+}
