@@ -1,13 +1,38 @@
-#include <gl/glut.h>
+#include <GL/freeglut.h>
+#include <windows.h>
 
-bool fullscreen = false;
-bool mouseDown = false;
+void init(void);
+void keyboard(unsigned char, int, int);
+void size(int, int);
+void MouseWheel(int, int, int, int);
+
+double rotate_y = 0;
+double rotate_x = 0;
+double zoom = 0.5;
 
 float xrot = 0.0f;
 float yrot = 0.0f;
 
-float xdiff = 0.0f;
-float ydiff = 0.0f;
+int is_depth, a;
+
+void glut()
+{
+	glLoadIdentity();
+	gluLookAt(
+		0.0f, 0.0f, 3.0f,
+		0.0f, 0.0f, 0.0f,
+		0.0f, 1.0f, 0.0f);
+	glRotatef(xrot, 0.0f, 1.0f, 0.0f);
+	glRotatef(yrot, 0.0f, 1.0f, 0.0f);
+}
+
+void init(void) {
+	glClearColor(1, 1, 1, 0);
+	glMatrixMode(GL_PROJECTION);
+	glEnable(GL_DEPTH_TEST);
+	is_depth = 1;
+	glMatrixMode(GL_MODELVIEW);
+}
 
 void drawSquare()
 {
@@ -155,7 +180,7 @@ void drawSquare()
 	glEnd();
 	//atap tengah
 	glBegin(GL_POLYGON);
-	glColor3ub(200 , 200, 200); 
+	glColor3ub(200, 200, 200);
 	glVertex3f(0.35, 0, 1.6);
 	glVertex3f(0.35, -0.45, 1.6);
 	glVertex3f(0.55, -0.65, 1.6);
@@ -217,89 +242,95 @@ void drawSquare()
 	glVertex3f(0.55, -1.4, 1.2);
 
 	glEnd();
-
-	glFlush();
 }
 
-bool init()
+void render(void)
 {
-	glClearColor(0.0f, 1.0f, 1.0f, 0.0f);
-	glEnable(GL_DEPTH_TEST);
-	glDepthFunc(GL_LEQUAL);
-	glClearDepth(1.0f);
-	return true;
-}
-
-void display()
-{
-	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-	glLoadIdentity();
-
-	gluLookAt(
-		0.0f, 0.0f, 3.0f,
-		0.0f, 0.0f, 0.0f,
-		0.0f, 1.0f, 0.0f);
-
-	glRotatef(xrot, 1.0f, 0.0f, 0.0f);
-	glRotatef(yrot, 0.0f, 1.0f, 0.0f);
-
+	if (a) {
+		if (is_depth) {
+			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+			drawSquare();
+		}
+		else
+			glClear(GL_COLOR_BUFFER_BIT);
+		drawSquare();
+	}
+	else
+		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	drawSquare();
+	glPopMatrix();
 	glutSwapBuffers();
 }
 
-void resize(int w, int h)
+void size(int w, int h)
 {
+	if (h == 0) h = 1;
+
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
-
-	glViewport(0, 0, w, h);
-
 	gluPerspective(45.0f, 1.0f * w / h, 1.0f, 100.0f);
-
+	glTranslated(0, -5, -15);
 	glMatrixMode(GL_MODELVIEW);
-	glLoadIdentity();
-}
 
+}
 
 void mouse(int button, int state, int x, int y)
 {
-	if (button == GLUT_LEFT_BUTTON && state == GLUT_DOWN)
+	if (state == GLUT_DOWN && button == GLUT_RIGHT_BUTTON)
 	{
-		mouseDown = true;
-
-		xdiff = x - yrot;
-		ydiff = -y + xrot;
+		glTranslated(0, 0, -0.3); //Zoom In
 	}
-	else
-		mouseDown = false;
+
+	else if (state == GLUT_DOWN && button == GLUT_LEFT_BUTTON)
+	{
+		glTranslated(0, 0, 0.3); //Zoom Out
+	}
+	glutPostRedisplay();
+
 }
 
-void mouseMotion(int x, int y)
-{
-	if (mouseDown)
-	{
-		yrot = x - xdiff;
-		xrot = y + ydiff;
+void keyboard(unsigned char key, int x, int y) {
 
-		glutPostRedisplay();
+	switch (key) {
+
+	case 'd':
+		glRotated(2, 0, 1, 0);
+		break;
+	case 'a':
+		glRotated(2, 2, 0, -1);
+		break;
+	case 'w':
+		glRotated(2, 0, 0, 1);
+		break;
+	case 's':
+		glRotated(-2, 0, 0, 1);
+		break;
+	case 'y':
+		glTranslated(0, 3, 0);
+		break;
+	case 'h':
+		glTranslated(0, -3, 0);
+		break;
+	case 'g':
+		glTranslated(-3, 0, 0);
+		break;
+	case 'j':
+		glTranslated(3, 0, 0);
+		break;
 	}
+	render();
 }
 
-int main(int argc, char* argv[])
-{
+int main(int argc, char** argv) {
 	glutInit(&argc, argv);
-	glutInitWindowSize(1366, 768);
 	glutInitDisplayMode(GLUT_RGB | GLUT_DOUBLE);
-
-	glutCreateWindow("Plaza Indonesia");
-
-	glutDisplayFunc(display);
+	glutInitWindowSize(800, 800);
+	glutCreateWindow("Dio Yudha Perdana 672018165");
+	init();
+	glutDisplayFunc(render);
+	glutKeyboardFunc(keyboard);
 	glutMouseFunc(mouse);
-	glutMotionFunc(mouseMotion);
-	glutReshapeFunc(resize);
-
-	if (!init())
-		return 1;
+	glutReshapeFunc(size);
 
 	glutMainLoop();
 
