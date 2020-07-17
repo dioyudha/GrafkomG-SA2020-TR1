@@ -324,8 +324,8 @@ void keyboard(unsigned char key, int x, int y) {
 int main(int argc, char** argv) {
 	glutInit(&argc, argv);
 	glutInitDisplayMode(GLUT_RGB | GLUT_DOUBLE);
-	glutInitWindowSize(800, 800);
-	glutCreateWindow("Dio Yudha Perdana 672018165");
+	glutInitWindowSize(1366, 768);
+	glutCreateWindow("PLAZA INDONESIA");
 	init();
 	glutDisplayFunc(render);
 	glutKeyboardFunc(keyboard);
