@@ -1,11 +1,6 @@
 #include <GL/freeglut.h>
 #include <windows.h>
 
-void init(void);
-void keyboard(unsigned char, int, int);
-void size(int, int);
-void MouseWheel(int, int, int, int);
-
 double rotate_y = 0;
 double rotate_x = 0;
 double zoom = 0.5;
@@ -15,30 +10,25 @@ float yrot = 0.0f;
 
 int is_depth, a;
 
-void glut()
-{
-	glLoadIdentity();
-	gluLookAt(
-		0.0f, 0.0f, 3.0f,
-		0.0f, 0.0f, 0.0f,
-		0.0f, 1.0f, 0.0f);
-	glRotatef(xrot, 0.0f, 1.0f, 0.0f);
-	glRotatef(yrot, 0.0f, 1.0f, 0.0f);
-}
-
-void init(void) {
+void init() {
 	glClearColor(1, 1, 1, 0);
+	glLoadIdentity();
+	gluLookAt(0.2, 0.4, 5.0,
+		3, 3, 3,
+		4.5, 4.5, 100);
+	glRotatef(xrot, 1.0f, 0.0f, 0.0f);
+	glRotatef(yrot, 0.0f, 1.0f, 0.0f);
 	glMatrixMode(GL_PROJECTION);
 	glEnable(GL_DEPTH_TEST);
 	is_depth = 1;
 	glMatrixMode(GL_MODELVIEW);
 }
 
-void drawSquare()
-{
-	glBegin(GL_POLYGON);
+void Gedung() {
+
 	//gedung belakang
-	glColor3ub(253, 215, 3);
+	glBegin(GL_POLYGON);
+	glColor3ub(245, 245, 245);
 	glVertex3f(0.8, 0, 0);
 	glVertex3f(0.8, 0, 1.6);
 	glVertex3f(0.35, 0, 1.6);
@@ -49,19 +39,20 @@ void drawSquare()
 	glVertex3f(-0.45, 0, 1.2);
 	glVertex3f(-1, 0, 1.2);
 	glVertex3f(-1, 0, 0);
-
 	glEnd();
-	//belakang
+
+	//tengah belakang
 	glBegin(GL_POLYGON);
-	glColor3ub(0, 0, 0);
+	glColor3ub(220, 220, 220);
 	glVertex3f(1, -0.2, 1.6);
 	glVertex3f(0.8, 0, 1.6);
 	glVertex3f(0.8, 0, 0);
 	glVertex3f(1, -0.2, 0);
 	glEnd();
-	glBegin(GL_POLYGON);
+
 	//belakang
-	glColor3ub(220, 20, 60);
+	glBegin(GL_POLYGON);
+	glColor3ub(245, 245, 245);
 	glVertex3f(1, -0.2, 0);
 	glVertex3f(1, -0.2, 1.6);
 	glVertex3f(1, -0.65, 1.6);
@@ -73,17 +64,19 @@ void drawSquare()
 	glVertex3f(1, -2, 1.2);
 	glVertex3f(1, -2, 0);
 	glEnd();
+
 	//samping kiri
 	glBegin(GL_POLYGON);
-	glColor3ub(0, 0, 255);
+	glColor3ub(211, 211, 211);
 	glVertex3f(-1, 0, 1.2);
 	glVertex3f(-1, -0.45, 1.2);
 	glVertex3f(-1, -0.45, 0);
 	glVertex3f(-1, 0, 0);
 	glEnd();
+
 	//dalam kiri
 	glBegin(GL_POLYGON);
-	glColor3ub(127, 255, 1);
+	glColor3ub(245, 245, 245);
 	glVertex3f(0.35, -0.45, 0);
 	glVertex3f(0.35, -0.45, 1.6);
 	glVertex3f(0.35, -0.45, 1.5);
@@ -94,17 +87,19 @@ void drawSquare()
 	glVertex3f(-1, -0.45, 1.2);
 	glVertex3f(-1, -0.45, 0);
 	glEnd();
+
 	//tengahtengah
 	glBegin(GL_POLYGON);
-	glColor3ub(0, 0, 0);
+	glColor3ub(220, 220, 220);
 	glVertex3f(0.35, -0.45, 0);
 	glVertex3f(0.55, -0.65, 0);
 	glVertex3f(0.55, -0.65, 1.6);
 	glVertex3f(0.35, -0.45, 1.6);
 	glEnd();
+
 	//dalam kanan
 	glBegin(GL_POLYGON);
-	glColor3ub(127, 255, 1);
+	glColor3ub(245, 245, 245);
 	glVertex3f(0.55, -0.65, 0);
 	glVertex3f(0.55, -0.65, 1.6);
 	glVertex3f(0.55, -0.65, 1.5);
@@ -114,17 +109,17 @@ void drawSquare()
 	glVertex3f(0.55, -1.4, 1.2);
 	glVertex3f(0.55, -2, 1.2);
 	glVertex3f(0.55, -2, 0);
-
 	glEnd();
+
 	//samping kanan
 	glBegin(GL_QUADS);
-	glColor3ub(0, 0, 255);
+	glColor3ub(211, 211, 211);
 	glVertex3f(0.55, -2, 0);
 	glVertex3f(1, -2, 0);
 	glVertex3f(1, -2, 1.2);
 	glVertex3f(0.55, -2, 1.2);
-
 	glEnd();
+
 	//atap 1
 	glBegin(GL_QUADS);
 	glColor3ub(200, 200, 200);
@@ -132,16 +127,17 @@ void drawSquare()
 	glVertex3f(-0.45, 0, 1.2);
 	glVertex3f(-0.45, -0.45, 1.2);
 	glVertex3f(-1, -0.45, 1.2);
-
 	glEnd();
+
 	//atap 2
 	glBegin(GL_QUADS);
+	glColor3ub(200, 200, 200);
 	glVertex3f(-0.45, 0, 1.4);
 	glVertex3f(-0.45, -0.45, 1.4);
 	glVertex3f(0, -0.45, 1.4);
 	glVertex3f(0, 0, 1.4);
-
 	glEnd();
+
 	//atap 3
 	glBegin(GL_QUADS);
 	glColor3ub(200, 200, 200);
@@ -149,8 +145,8 @@ void drawSquare()
 	glVertex3f(0.35, -0.45, 1.5);
 	glVertex3f(0, -0.45, 1.5);
 	glVertex3f(0, 0, 1.5);
-
 	glEnd();
+
 	//atap 4
 	glBegin(GL_QUADS);
 	glColor3ub(200, 200, 200);
@@ -158,8 +154,8 @@ void drawSquare()
 	glVertex3f(0.55, -0.65, 1.5);
 	glVertex3f(0.55, -0.95, 1.5);
 	glVertex3f(1, -0.95, 1.5);
-
 	glEnd();
+
 	//atap 5
 	glBegin(GL_QUADS);
 	glColor3ub(200, 200, 200);
@@ -167,8 +163,8 @@ void drawSquare()
 	glVertex3f(1, -0.95, 1.4);
 	glVertex3f(1, -1.4, 1.4);
 	glVertex3f(0.55, -1.4, 1.4);
-
 	glEnd();
+
 	//atap 6
 	glBegin(GL_QUADS);
 	glColor3ub(200, 200, 200);
@@ -176,8 +172,8 @@ void drawSquare()
 	glVertex3f(1, -1.4, 1.2);
 	glVertex3f(1, -2, 1.2);
 	glVertex3f(0.55, -2, 1.2);
-
 	glEnd();
+
 	//atap tengah
 	glBegin(GL_POLYGON);
 	glColor3ub(200, 200, 200);
@@ -188,9 +184,10 @@ void drawSquare()
 	glVertex3f(1, -0.2, 1.6);
 	glVertex3f(0.8, 0, 1.6);
 	glEnd();
+
 	//dinding atap 1
 	glBegin(GL_QUADS);
-	glColor3ub(0, 0, 0);
+	glColor3ub(105, 105, 105);
 	glVertex3f(-0.45, 0, 1.2);
 	glVertex3f(-0.45, -0.45, 1.2);
 	glVertex3f(-0.45, -0.45, 1.4);
@@ -199,7 +196,7 @@ void drawSquare()
 	glEnd();
 	//dinding atap 2
 	glBegin(GL_QUADS);
-	glColor3ub(0, 0, 0);
+	glColor3ub(105, 105, 105);
 	glVertex3f(0, 0, 1.4);
 	glVertex3f(0, -0.45, 1.4);
 	glVertex3f(0, -0.45, 1.5);
@@ -208,7 +205,7 @@ void drawSquare()
 	glEnd();
 	//dinding atap 3
 	glBegin(GL_QUADS);
-	glColor3ub(0, 0, 0);
+	glColor3ub(105, 105, 105);
 	glVertex3f(0.35, 0, 1.5);
 	glVertex3f(0.35, 0, 1.6);
 	glVertex3f(0.35, -0.45, 1.6);
@@ -217,7 +214,7 @@ void drawSquare()
 	glEnd();
 	//dinding atap 4
 	glBegin(GL_QUADS);
-	glColor3ub(0, 0, 0);
+	glColor3ub(105, 105, 105);
 	glVertex3f(0.55, -0.65, 1.5);
 	glVertex3f(0.55, -0.65, 1.6);
 	glVertex3f(1, -0.65, 1.6);
@@ -226,64 +223,234 @@ void drawSquare()
 	glEnd();
 	//dinding atap 5
 	glBegin(GL_QUADS);
-	glColor3ub(0, 0, 0);
+	glColor3ub(105, 105, 105);
 	glVertex3f(0.55, -0.95, 1.4);
 	glVertex3f(0.55, -0.95, 1.5);
 	glVertex3f(1, -0.95, 1.5);
 	glVertex3f(1, -0.95, 1.4);
-
 	glEnd();
+
 	//dinding atap 6
 	glBegin(GL_QUADS);
-	glColor3ub(0, 0, 0);
+	glColor3ub(105, 105, 105);
 	glVertex3f(0.55, -1.4, 1.4);
 	glVertex3f(1, -1.4, 1.4);
 	glVertex3f(1, -1.4, 1.2);
 	glVertex3f(0.55, -1.4, 1.2);
+	glEnd();
+}
+
+void atapbawah() {
+	//atas
+	glBegin(GL_POLYGON);
+	glColor3ub(105, 105, 105);
+	glVertex3f(0.55, -2, 0.3);
+	glVertex3f(-0.4, -2, 0.3);
+	glVertex3f(-1, -1.4, 0.3);
+	glVertex3f(-1, -0.45, 0.3);
+	glVertex3f(0.35, -0.45, 0.3);
+	glVertex3f(0.55, -0.65, 0.3);
+
+	glEnd();
+	//bwh
+	glBegin(GL_POLYGON);
+	glColor3ub(105, 105, 105);
+	glVertex3f(0.55, -2, 0.1);
+	glVertex3f(-0.4, -2, 0.1);
+	glVertex3f(-1, -1.4, 0.1);
+	glVertex3f(-1, -0.45, 0.1);
+	glVertex3f(0.35, -0.45, 0.1);
+	glVertex3f(0.55, -0.65, 0.1);
+	glEnd();
+
+	glBegin(GL_POLYGON);
+	glColor3ub(105, 105, 105);
+	glVertex3f(-1, -0.45, 0.1);
+	glVertex3f(-1, -1.4, 0.1);
+	glVertex3f(-0.4, -2, 0.1);
+	glVertex3f(0.55, -2, 0.1);
+	glVertex3f(0.55, -2, 0.3);
+	glVertex3f(-0.4, -2, 0.3);
+	glVertex3f(-1, -1.4, 0.3);
+	glVertex3f(-1, -0.45, 0.3);
 
 	glEnd();
 }
 
-void render(void)
+void lantaibwh() {
+	//atas
+	glBegin(GL_POLYGON);
+	glColor3ub(90, 90, 90);
+	glVertex3f(0.55, -2, 0);
+	glVertex3f(-0.4, -2, 0);
+	glVertex3f(-1, -1.4, 0);
+	glVertex3f(-1, -0.45, 0);
+	glVertex3f(0.35, -0.45, 0);
+	glVertex3f(0.55, -0.65, 0);
+
+	glEnd();
+	//bwh
+	glBegin(GL_POLYGON);
+	glVertex3f(0.55, -2, -0.1);
+	glVertex3f(-0.4, -2, -0.1);
+	glVertex3f(-1, -1.4, -0.1);
+	glVertex3f(-1, -0.45, -0.1);
+	glVertex3f(0.35, -0.45, -0.1);
+	glVertex3f(0.55, -0.65, -0.1);
+	glEnd();
+
+	glBegin(GL_POLYGON);
+
+	glVertex3f(-1, -0.45, 0);
+	glVertex3f(-1, -1.4, 0);
+	glVertex3f(-0.4, -2, 0);
+	glVertex3f(0.55, -2, 0);
+	glVertex3f(0.55, -2, -0.1);
+	glVertex3f(-0.4, -2, -0.1);
+	glVertex3f(-1, -1.4, -0.1);
+	glVertex3f(-1, -0.45, -0.1);
+
+	glEnd();
+}
+
+void lataran() {
+	glBegin(GL_POLYGON);
+	glColor3ub(0, 0, 0);
+	glVertex3f(-1, -1, -0.1);
+	glVertex3f(-1.6, -1, -0.1);
+	glVertex3f(-1.6, -2, -0.1);
+	glVertex3f(-1.45, -2, -0.1);
+	glVertex3f(-1, -2.45, -0.1);
+	glVertex3f(-1, -2.6, -0.1);
+	glVertex3f(0, -2.6, -0.1);
+	glVertex3f(0, -2, -0.1);
+	glVertex3f(-0.4, -2, -0.1);
+	glVertex3f(-1, -1.4, -0.1);
+	glEnd();
+	glBegin(GL_POLYGON);
+	glColor3ub(20, 20, 20);
+	glVertex3f(-1, -1, -0.2);
+	glVertex3f(-1.6, -1, -0.2);
+	glVertex3f(-1.6, -2, -0.2);
+	glVertex3f(-1.45, -2, -0.2);
+	glVertex3f(-1, -2.45, -0.2);
+	glVertex3f(-1, -2.6, -0.2);
+	glVertex3f(0, -2.6, -0.2);
+	glVertex3f(0, -2, -0.2);
+	glVertex3f(-0.4, -2, -0.2);
+	glVertex3f(-1, -1.4, -0.2);
+	glEnd();
+
+	//tembok bawah
+	glBegin(GL_QUADS);
+	glColor3ub(100, 100, 0);
+	glVertex3f(-1, -1, -0.1);
+	glVertex3f(-1.6, -1, -0.1);
+	glVertex3f(-1.6, -1, -0.2);
+	glVertex3f(-1, -1, -0.2);
+	glEnd();
+
+	glBegin(GL_QUADS);
+	glVertex3f(-1.6, -1, -0.2);
+	glVertex3f(-1.6, -1, -0.1);
+	glVertex3f(-1.6, -2, -0.1);
+	glVertex3f(-1.6, -2, -0.2);
+
+	//kanan
+	glEnd();
+	glBegin(GL_QUADS);
+	glVertex3f(-1, -2.6, -0.1);
+	glVertex3f(0, -2.6, -0.1);
+	glVertex3f(0, -2.6, -0.2);
+	glVertex3f(-1, -2.6, -0.2);
+	glEnd();
+	glBegin(GL_QUADS);
+	glVertex3f(0, -2, -0.1);
+	glVertex3f(0, -2.6, -0.1);
+	glVertex3f(0, -2.6, -0.2);
+	glVertex3f(0, -2, -0.2);
+	glEnd();
+
+
+		
+	glBegin(GL_QUADS);
+	glVertex3f(-1, -2.45, -0.2);
+	glVertex3f(-1, -2.45, -0.1);
+	glVertex3f(-1.45, -2, -0.1);
+	glVertex3f(-1.45, -2, -0.2);
+	glEnd();
+
+	glBegin(GL_QUADS);
+	glVertex3f(-1.45, -2, -0.1);
+	glVertex3f(-1.6, -2, -0.1);
+	glVertex3f(-1.6, -2, -0.2);
+	glVertex3f(-1.45, -2, -0.2);
+	glEnd();
+
+	glBegin(GL_QUADS);
+	glVertex3f(-1, -2.45, -0.1);
+	glVertex3f(-1, -2.6, -0.1);
+	glVertex3f(-1, -2.6, -0.2);
+	glVertex3f(-1, -2.45, -0.2);
+	glEnd();
+
+	glBegin(GL_POLYGON);
+	glColor3ub(50, 50, 50);
+	glVertex3f(-0.95, -0.45, 1.1);
+	glVertex3f(-0.95, -0.45, 1);
+	glVertex3f(-0.85, -0.45, 1);
+	glVertex3f(-0.85, -0.45, 1.1);
+	glEnd();
+
+
+}
+
+void render()
 {
 	if (a) {
 		if (is_depth) {
 			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-			drawSquare();
+			Gedung();
 		}
 		else
 			glClear(GL_COLOR_BUFFER_BIT);
-		drawSquare();
+		Gedung();
+		atapbawah();
+		lantaibwh();
+		lataran();
 	}
 	else
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-	drawSquare();
+	Gedung();
+	atapbawah();
+	lantaibwh();
+	lataran();
 	glPopMatrix();
 	glutSwapBuffers();
 }
 
-void size(int w, int h)
-{
+void size(int w, int h) {
+
 	if (h == 0) h = 1;
 
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
-	gluPerspective(45.0f, 1.0f * w / h, 1.0f, 100.0f);
-	glTranslated(0, -5, -15);
+	gluPerspective(45, 1.0 * w / h, 1.5, 45);
+	glTranslated(-1, 4.5, -4.2);
 	glMatrixMode(GL_MODELVIEW);
 
 }
 
 void mouse(int button, int state, int x, int y)
 {
-	if (state == GLUT_DOWN && button == GLUT_RIGHT_BUTTON)
+	if (button == GLUT_RIGHT_BUTTON)
 	{
-		glTranslated(0, 0, -0.3); //Zoom In
+		glTranslated(0.5, 0.5, 0); //Zoom In
 	}
 
-	else if (state == GLUT_DOWN && button == GLUT_LEFT_BUTTON)
+	else if (button == GLUT_LEFT_BUTTON)
 	{
-		glTranslated(0, 0, 0.3); //Zoom Out
+		glTranslated(-0.5, -0.5, 0); //Zoom Out
 	}
 	glutPostRedisplay();
 
@@ -293,17 +460,17 @@ void keyboard(unsigned char key, int x, int y) {
 
 	switch (key) {
 
-	case 'd':
-		glRotated(2, 0, 1, 0);
+	case 'd'://putar kanan
+		glRotated(1, 0, 1, 0);
 		break;
-	case 'a':
-		glRotated(2, 2, 0, -1);
+	case 'a'://putar kiri
+		glRotated(1, 0, -1, 0);
 		break;
-	case 'w':
-		glRotated(2, 0, 0, 1);
+	case 'w'://putar naik
+		glRotated(1, -2, 0, 0);
 		break;
-	case 's':
-		glRotated(-2, 0, 0, 1);
+	case 's'://putar turun
+		glRotated(1, 2, 0, 0);
 		break;
 	case 'y':
 		glTranslated(0, 3, 0);
@@ -323,9 +490,9 @@ void keyboard(unsigned char key, int x, int y) {
 
 int main(int argc, char** argv) {
 	glutInit(&argc, argv);
-	glutInitDisplayMode(GLUT_RGB | GLUT_DOUBLE);
+	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB);
 	glutInitWindowSize(1366, 768);
-	glutCreateWindow("PLAZA INDONESIA");
+	glutCreateWindow("Plaza Indonesia");
 	init();
 	glutDisplayFunc(render);
 	glutKeyboardFunc(keyboard);
