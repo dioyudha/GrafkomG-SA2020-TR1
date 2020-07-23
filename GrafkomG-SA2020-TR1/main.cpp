@@ -687,6 +687,7 @@ void Jendela() {
 	glVertex3f(-1.11, -0.1, 0.4);
 	glVertex3f(-1.11, -0.21, 0.4);
 	glEnd();
+
 	//satunya
 	glBegin(GL_LINE_STRIP);
 	glVertex3f(-1.11, -0.21, 1);
@@ -731,6 +732,7 @@ void Jendela() {
 	glVertex3f(0.9, -2.101, 0.3);
 	glVertex3f(0.78, -2.101, 0.3);
 	glEnd();
+
 	//stripnya
 	glBegin(GL_LINES);
 	glColor3ub(255, 255, 255);
@@ -994,14 +996,260 @@ void Jendela() {
 	glEnd();
 
 
-//jendela belakang tengah
+
+
+
+
+
+	//jendela belakang tengah
 	glBegin(GL_QUADS);
 	glColor3ub(0, 0, 0);
 	glVertex3f(0.98, -0.16, 1.5);
 	glVertex3f(0.83, -0.03, 1.5);
 	glVertex3f(0.83, -0.03, 0);
-	glVertex3f(0.98, -0.15, 0);
+	glVertex3f(0.98, -0.16, 0);
 	glEnd();
+	//linenya jendela belakang	
+	glBegin(GL_LINES);
+	glColor3ub(240, 230, 140);
+	glVertex3f(0.98, -0.16, 1.4);
+	glVertex3f(0.83, -0.03, 1.4);
+	glEnd();
+	glBegin(GL_LINES);
+	glVertex3f(0.98, -0.16, 1.3);
+	glVertex3f(0.83, -0.03, 1.3);
+	glEnd();
+	glBegin(GL_LINES);
+	glVertex3f(0.98, -0.16, 1.2);
+	glVertex3f(0.83, -0.03, 1.2);
+	glEnd();
+	glBegin(GL_LINES);
+	glVertex3f(0.98, -0.16, 1.1);
+	glVertex3f(0.83, -0.03, 1.1);
+	glEnd();
+	glBegin(GL_LINES);
+	glVertex3f(0.98, -0.16, 1);
+	glVertex3f(0.83, -0.03, 1);
+	glEnd();
+	glBegin(GL_LINES);
+	glVertex3f(0.98, -0.16, 0.9);
+	glVertex3f(0.83, -0.03, 0.9);
+	glEnd();
+	glBegin(GL_LINES);
+	glVertex3f(0.98, -0.16, 0.8);
+	glVertex3f(0.83, -0.03, 0.8);
+	glEnd();
+	glBegin(GL_LINES);
+	glVertex3f(0.98, -0.16, 0.7);
+	glVertex3f(0.83, -0.03, 0.7);
+	glEnd();
+	glBegin(GL_LINES);
+	glVertex3f(0.98, -0.16, 0.6);
+	glVertex3f(0.83, -0.03, 0.6);
+	glEnd();
+	glBegin(GL_LINES);
+	glVertex3f(0.98, -0.16, 0.5);
+	glVertex3f(0.83, -0.03, 0.5);
+	glEnd();
+	glBegin(GL_LINES);
+	glVertex3f(0.98, -0.16, 0.4);
+	glVertex3f(0.83, -0.03, 0.4);
+	glEnd();
+	glBegin(GL_LINES);
+	glVertex3f(0.98, -0.16, 0.3);
+	glVertex3f(0.83, -0.03, 0.3);
+	glEnd();
+	glBegin(GL_LINES);
+	glVertex3f(0.98, -0.16, 0.2);
+	glVertex3f(0.83, -0.03, 0.2);
+	glEnd();
+	glBegin(GL_LINES);
+	glVertex3f(0.98, -0.16, 0.1);
+	glVertex3f(0.83, -0.03, 0.1);
+	glEnd();
+	glBegin(GL_LINES);
+	glVertex3f(0.98, -0.16, 0);
+	glVertex3f(0.83, -0.03, 0);
+	glEnd();
+
+
+
+	//belakang kanan
+	glBegin(GL_QUADS);
+	glColor3ub(0, 0, 0);
+	glVertex3f(1.01, -2.05, 1.1);
+	glVertex3f(1.01, -0.25, 1.1);
+	glVertex3f(1.01, -0.25, 0);
+	glVertex3f(1.01, -2.05, 0);
+	glEnd();
+	glBegin(GL_POLYGON);
+	glVertex3f(1.01, -1.35, 1.3);
+	glVertex3f(1.01, -0.25, 1.3);
+	glVertex3f(1.01, -0.25, 1.1);
+	glVertex3f(1.01, -1.35, 1.1);
+	glEnd();
+	glBegin(GL_POLYGON);
+	glVertex3f(1.01, -0.85, 1.4);
+	glVertex3f(1.01, -0.25, 1.4);
+	glVertex3f(1.01, -0.25, 1.1);
+	glVertex3f(1.01, -0.85, 1.1);
+	glEnd();
+	glBegin(GL_POLYGON);
+	glVertex3f(1.01, -0.55, 1.5);
+	glVertex3f(1.01, -0.25, 1.5);
+	glVertex3f(1.01, -0.25, 1.1);  
+	glVertex3f(1.01, -0.55, 1.1);
+	glEnd();
+
+	
+	//linenya jendela belakang kanan
+	glBegin(GL_LINES);
+	glColor3ub(240, 230, 140);	
+	glVertex3f(1.01, -2.05, 1);
+	glVertex3f(1.01, -0.25, 1);
+	glEnd();
+	glBegin(GL_LINES);
+	glVertex3f(1.01, -2.05, 1.1);
+	glVertex3f(1.01, -0.25, 1.1);
+	glEnd();
+	glBegin(GL_LINES);
+	glVertex3f(1.01, -2.05, 0.9);
+	glVertex3f(1.01, -0.25, 0.9);
+	glEnd();
+	glBegin(GL_LINES);
+	glVertex3f(1.01, -2.05, 0.8);
+	glVertex3f(1.01, -0.25, 0.8);
+	glEnd();
+	glBegin(GL_LINES);
+	glVertex3f(1.01, -2.05, 0.7);
+	glVertex3f(1.01, -0.25, 0.7);
+	glEnd();
+	glBegin(GL_LINES);
+	glVertex3f(1.01, -2.05, 0.6);
+	glVertex3f(1.01, -0.25, 0.6);
+	glEnd();
+	glBegin(GL_LINES);
+	glVertex3f(1.01, -2.05, 0.5);
+	glVertex3f(1.01, -0.25, 0.5);
+	glEnd();
+	glBegin(GL_LINES); 
+	glVertex3f(1.01, -2.05, 0.4);
+	glVertex3f(1.01, -0.25, 0.4);
+	glEnd();
+	glBegin(GL_LINES);
+	glVertex3f(1.01, -2.05, 0.3);
+	glVertex3f(1.01, -0.25, 0.3);
+	glEnd();
+	glBegin(GL_LINES);
+	glVertex3f(1.01, -2.05, 0.2);
+	glVertex3f(1.01, -0.25, 0.2);
+	glEnd();
+	glBegin(GL_LINES);
+	glVertex3f(1.01, -2.05, 0.1);
+	glVertex3f(1.01, -0.25, 0.1);
+	glEnd();
+	glBegin(GL_LINES);
+	glVertex3f(1.01, -2.05, 0);
+	glVertex3f(1.01, -0.25, 0);
+	glEnd();
+	
+	//vertikal kiri berlakang
+	glBegin(GL_LINES);
+	glVertex3f(1.01, -0.25, 1.5);
+	glVertex3f(1.01, -0.25, 0);
+	glEnd();
+	glBegin(GL_LINES);
+	glVertex3f(1.01, -0.35, 1.5);
+	glVertex3f(1.01, -0.35, 0);
+	glEnd();
+	glBegin(GL_LINES);
+	glVertex3f(1.01, -0.45, 1.5);
+	glVertex3f(1.01, -0.45, 0);
+	glEnd();
+	glBegin(GL_LINES);
+	glVertex3f(1.01, -0.55, 1.5);
+	glVertex3f(1.01, -0.55, 0);
+	glEnd();
+	glBegin(GL_LINES);
+	glVertex3f(1.01, -0.65, 1.4);
+	glVertex3f(1.01, -0.65, 0);
+	glEnd();
+	glBegin(GL_LINES);
+	glVertex3f(1.01, -0.75, 1.4);
+	glVertex3f(1.01, -0.75, 0);
+	glEnd();//3333333333333333333
+	glBegin(GL_LINES);
+	glVertex3f(1.01, -0.85, 1.4);
+	glVertex3f(1.01, -0.85, 0);
+	glEnd();
+	glBegin(GL_LINES);
+	glVertex3f(1.01, -0.95, 1.3);
+	glVertex3f(1.01, -0.95, 0);
+	glEnd();
+	glBegin(GL_LINES);
+	glVertex3f(1.01, -1.05, 1.3);
+	glVertex3f(1.01, -1.05, 0);
+	glEnd();
+	glBegin(GL_LINES);
+	glVertex3f(1.01, -1.15, 1.3);
+	glVertex3f(1.01, -1.15, 0);
+	glEnd();
+	glBegin(GL_LINES);
+	glVertex3f(1.01, -1.25, 1.3);
+	glVertex3f(1.01, -1.25, 0);
+	glEnd();
+	glBegin(GL_LINES);
+	glVertex3f(1.01, -1.35, 1.3);
+	glVertex3f(1.01, -1.35, 0);
+	glEnd();
+	glBegin(GL_LINES);
+	glVertex3f(1.01, -1.45, 1.1);
+	glVertex3f(1.01, -1.45, 0);
+	glEnd();
+	glBegin(GL_LINES);
+	glVertex3f(1.01, -1.55, 1.1);
+	glVertex3f(1.01, -1.55, 0);
+	glEnd();
+	glBegin(GL_LINES);
+	glVertex3f(1.01, -1.65, 1.1);
+	glVertex3f(1.01, -1.65, 0);
+	glEnd();
+	glBegin(GL_LINES);
+	glVertex3f(1.01, -1.75, 1.1);
+	glVertex3f(1.01, -1.75, 0);
+	glEnd();
+	glBegin(GL_LINES);
+	glVertex3f(1.01, -1.85, 1.1);
+	glVertex3f(1.01, -1.85, 0);
+	glEnd();
+	glBegin(GL_LINES);
+	glVertex3f(1.01, -1.95, 1.1);
+	glVertex3f(1.01, -1.95, 0);
+	glEnd();
+
+	
+	glBegin(GL_LINES);
+	glVertex3f(1.01, -0.6, 1.5);
+	glVertex3f(1.01, -0.25, 1.5);
+	glEnd();
+	glBegin(GL_LINES);
+	glVertex3f(1.01, -0.9, 1.4);
+	glVertex3f(1.01, -0.25, 1.4);
+	glEnd();
+
+	glBegin(GL_LINES);
+	glVertex3f(1.01, -1.35, 1.3);
+	glVertex3f(1.01, -0.25, 1.3);
+	glEnd();
+	glBegin(GL_LINES);
+	glVertex3f(1.01, -1.35, 1.2);
+	glVertex3f(1.01, -0.25, 1.2);
+	glEnd();
+	glBegin(GL_LINES);
+	glVertex3f(1.01, -2.05, 1.1);
+	glVertex3f(1.01, -0.25, 1.1);
+	glEnd();
+	
 }
 
 void Jendela1() {
@@ -1313,16 +1561,16 @@ void Keyboard(unsigned char key, int x, int y) {
 	switch (key) {
 
 	case 'd'://putar kanan
-		glRotated(0.5, 0, 0, 0.5);
+		glRotated(1.5, 0, 0, 1.5);
 		break;
 	case 'a'://putar kiri
-		glRotated(0.5, 0, 0, -0.5);
+		glRotated(1.5, 0, 0, -1.5);
 		break;
 	case 'w'://putar naik
-		glRotated(0.5, -0.5, 0.5, 0);
+		glRotated(1.5, -1.5, 1.5, 0);
 		break;
 	case 's'://putar turun
-		glRotated(0.5, 0.5, -0.5, 0);
+		glRotated(1.5, 1.5, -1.5, 0);
 		break;
 	case 'y'://geser atas
 		glTranslated(0, 0, 0.01);
