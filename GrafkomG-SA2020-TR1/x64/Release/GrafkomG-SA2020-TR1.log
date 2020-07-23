@@ -266,15 +266,15 @@ C:\Users\MrPaung\source\repos\GrafkomG-SA2020-TR1\GrafkomG-SA2020-TR1\main.cpp(5
 C:\Users\MrPaung\source\repos\GrafkomG-SA2020-TR1\GrafkomG-SA2020-TR1\main.cpp(521,28): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
 C:\Users\MrPaung\source\repos\GrafkomG-SA2020-TR1\GrafkomG-SA2020-TR1\main.cpp(526,29): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
 C:\Users\MrPaung\source\repos\GrafkomG-SA2020-TR1\GrafkomG-SA2020-TR1\main.cpp(527,29): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\MrPaung\source\repos\GrafkomG-SA2020-TR1\GrafkomG-SA2020-TR1\main.cpp(533,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\MrPaung\source\repos\GrafkomG-SA2020-TR1\GrafkomG-SA2020-TR1\main.cpp(533,28): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
 C:\Users\MrPaung\source\repos\GrafkomG-SA2020-TR1\GrafkomG-SA2020-TR1\main.cpp(534,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
 C:\Users\MrPaung\source\repos\GrafkomG-SA2020-TR1\GrafkomG-SA2020-TR1\main.cpp(535,26): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\MrPaung\source\repos\GrafkomG-SA2020-TR1\GrafkomG-SA2020-TR1\main.cpp(536,26): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\MrPaung\source\repos\GrafkomG-SA2020-TR1\GrafkomG-SA2020-TR1\main.cpp(536,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
 C:\Users\MrPaung\source\repos\GrafkomG-SA2020-TR1\GrafkomG-SA2020-TR1\main.cpp(541,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
 C:\Users\MrPaung\source\repos\GrafkomG-SA2020-TR1\GrafkomG-SA2020-TR1\main.cpp(542,28): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\MrPaung\source\repos\GrafkomG-SA2020-TR1\GrafkomG-SA2020-TR1\main.cpp(547,26): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\MrPaung\source\repos\GrafkomG-SA2020-TR1\GrafkomG-SA2020-TR1\main.cpp(548,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\MrPaung\source\repos\GrafkomG-SA2020-TR1\GrafkomG-SA2020-TR1\main.cpp(549,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\MrPaung\source\repos\GrafkomG-SA2020-TR1\GrafkomG-SA2020-TR1\main.cpp(547,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\MrPaung\source\repos\GrafkomG-SA2020-TR1\GrafkomG-SA2020-TR1\main.cpp(548,28): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\MrPaung\source\repos\GrafkomG-SA2020-TR1\GrafkomG-SA2020-TR1\main.cpp(549,28): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
 C:\Users\MrPaung\source\repos\GrafkomG-SA2020-TR1\GrafkomG-SA2020-TR1\main.cpp(561,26): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
 C:\Users\MrPaung\source\repos\GrafkomG-SA2020-TR1\GrafkomG-SA2020-TR1\main.cpp(562,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
 C:\Users\MrPaung\source\repos\GrafkomG-SA2020-TR1\GrafkomG-SA2020-TR1\main.cpp(566,26): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
@@ -764,8 +764,8 @@ C:\Users\MrPaung\source\repos\GrafkomG-SA2020-TR1\GrafkomG-SA2020-TR1\main.cpp(1
 C:\Users\MrPaung\source\repos\GrafkomG-SA2020-TR1\GrafkomG-SA2020-TR1\main.cpp(1599,29): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
 C:\Users\MrPaung\source\repos\GrafkomG-SA2020-TR1\GrafkomG-SA2020-TR1\main.cpp(1600,29): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
   Generating code
-  0 of 15 functions ( 0.0%) were compiled, the rest were copied from previous compilation.
+  1 of 15 functions ( 6.7%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    0 functions had inline decision re-evaluated but remain unchanged
+    1 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
   GrafkomG-SA2020-TR1.vcxproj -> C:\Users\MrPaung\source\repos\GrafkomG-SA2020-TR1\x64\Release\GrafkomG-SA2020-TR1.exe

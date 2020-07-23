@@ -530,10 +530,10 @@ void Lataran() {
 	//tanjakan kiri
 	glBegin(GL_QUADS);
 	glColor3ub(20, 20, 20);
-	glVertex3f(-1.6, -1, -0.1);
+	glVertex3f(-1.37, -1, -0.1);
 	glVertex3f(-1.1, -1, -0.1);
 	glVertex3f(-1.1, 0, -0.4);
-	glVertex3f(-1.6, 0, -0.4);
+	glVertex3f(-1.37, 0, -0.4);
 	glEnd();
 
 	glBegin(GL_LINES);
@@ -544,9 +544,9 @@ void Lataran() {
 
 	glBegin(GL_TRIANGLES);
 	glColor3ub(200, 200, 200);
-	glVertex3f(-1.6, 0, -0.4);
-	glVertex3f(-1.6, -1, -0.1);
-	glVertex3f(-1.6, -1, -0.4);
+	glVertex3f(-1.37, 0, -0.4);
+	glVertex3f(-1.37, -1, -0.1);
+	glVertex3f(-1.37, -1, -0.4);
 	glEnd();
 
 
