@@ -259,18 +259,26 @@ void Atapbawah() {
 	glVertex3f(0.55, -0.65, 0.1);
 	glEnd();
 
-	glBegin(GL_POLYGON);
-	glColor3ub(128, 0, 0);
+	glBegin(GL_QUADS);
+	glVertex3f(-1, -0.45, 0.3);
+	glVertex3f(-1, -1.4, 0.3);
+	glVertex3f(-1, -1.4, 0.1);
 	glVertex3f(-1, -0.45, 0.1);
+	glEnd();
+	glBegin(GL_QUADS);
+	glVertex3f(-1, -1.4, 0.3);
 	glVertex3f(-1, -1.4, 0.1);
 	glVertex3f(-0.4, -2, 0.1);
-	glVertex3f(0.55, -2, 0.1);
-	glVertex3f(0.55, -2, 0.3);
 	glVertex3f(-0.4, -2, 0.3);
-	glVertex3f(-1, -1.4, 0.3);
-	glVertex3f(-1, -0.45, 0.3);
-
 	glEnd();
+	glBegin(GL_QUADS);
+	glVertex3f(-0.4, -2, 0.1);
+	glVertex3f(-0.4, -2, 0.3);
+	glVertex3f(0.55, -2, 0.3);
+	glVertex3f(0.55, -2, 0.1);
+	glEnd();
+
+	
 }
 
 void Lantaibwh() {
@@ -452,6 +460,38 @@ void Lataran() {
 	glVertex3f(-1.1, -1, 0.05);
 	glVertex3f(-1.1, -1, -0.4);
 	glVertex3f(-1, -1, -0.4);
+	glEnd();
+
+
+	//pembatas 
+	glBegin(GL_LINES);
+	glColor3ub(255, 255, 255);
+	glVertex3f(-1.35, -1, -0.09);
+	glVertex3f(-1.6, -1, -0.09);
+	glEnd();
+	glBegin(GL_LINES);
+	glVertex3f(-1.6, -1, -0.09);
+	glVertex3f(-1.6, -2, -0.09);
+	glEnd();
+	glBegin(GL_LINES);
+	glVertex3f(-1, -2.6, -0.09);
+	glVertex3f(0, -2.6, -0.09);
+	glEnd();
+	glBegin(GL_LINES);
+	glVertex3f(-1, -2.45, -0.09);
+	glVertex3f(-1.45, -2, -0.09);
+	glEnd();
+	glBegin(GL_LINES);
+	glVertex3f(-1.45, -2, -0.09);
+	glVertex3f(-1.6, -2, -0.09);
+	glEnd();
+	glBegin(GL_LINES);
+	glVertex3f(-1, -2.45, -0.09);
+	glVertex3f(-1, -2.6, -0.09);
+	glEnd();
+	glBegin(GL_LINES);
+	glVertex3f(0, -2.6, -0.1);
+	glVertex3f(1, -2.6, -0.4);
 	glEnd();
 
 	//atap kanan
@@ -1521,6 +1561,16 @@ void Jendela() {
 }
 
 void strip() {
+	glBegin(GL_LINE_STRIP);
+	glColor3ub(245, 245, 245);
+	glVertex3f(0, -2, 0);
+	glVertex3f(0, -2, 0.1);
+	glEnd();
+	glBegin(GL_LINE_STRIP);
+	glColor3ub(245, 245, 245);
+	glVertex3f(-1, -1, 0);
+	glVertex3f(-1, -1, 0.1);
+	glEnd();
 	//atap lobby
 	glBegin(GL_LINE_LOOP);
 	glColor3ub(0, 0, 0);
