@@ -278,7 +278,7 @@ void Atapbawah() {
 	glVertex3f(0.55, -2, 0.1);
 	glEnd();
 
-	
+
 }
 
 void Lantaibwh() {
@@ -641,7 +641,7 @@ void Jendela() {
 	//kiri depan
 	glBegin(GL_QUADS);
 	glColor3ub(0, 0, 0);
-	glVertex3f(-0.95, -0.46, 1.1); 
+	glVertex3f(-0.95, -0.46, 1.1);
 	glVertex3f(-0.95, -0.46, 0.3);
 	glVertex3f(0.5, -0.46, 0.3);
 	glVertex3f(0.5, -0.46, 1.1);
@@ -750,7 +750,7 @@ void Jendela() {
 	glVertex3f(-0.05, -0.46, 0.3);
 	glEnd();
 	glBegin(GL_LINES);
-	glVertex3f(-0.15, -0.46, 1.4); 
+	glVertex3f(-0.15, -0.46, 1.4);
 	glVertex3f(-0.15, -0.46, 0.3);
 	glEnd();
 	glBegin(GL_LINES);
@@ -965,7 +965,7 @@ void Jendela() {
 	glVertex3f(-1.11, -0.1, 0.3);
 	glVertex3f(-1.11, -0.21, 0.3);
 	glEnd();
-	              //strip nya
+	//strip nya
 	glBegin(GL_LINE_STRIP);
 	glColor3ub(200, 200, 200);
 	glVertex3f(-1.11, -0.1, 1);
@@ -985,7 +985,7 @@ void Jendela() {
 	glEnd();
 	glBegin(GL_LINE_STRIP);
 	glVertex3f(-1.11, -0.1, 0.6);
-	glVertex3f(-1.11, -0.21,0.6);
+	glVertex3f(-1.11, -0.21, 0.6);
 	glEnd();
 	glBegin(GL_LINE_STRIP);
 	glVertex3f(-1.11, -0.1, 0.5);
@@ -1049,7 +1049,7 @@ void Jendela() {
 	glEnd();
 	glBegin(GL_LINES);
 	glVertex3f(0.78, -2.101, 0.9);
-	glVertex3f(0.9, -2.101,0.9);
+	glVertex3f(0.9, -2.101, 0.9);
 	glEnd();
 	glBegin(GL_LINES);
 	glVertex3f(0.78, -2.101, 0.8);
@@ -1104,7 +1104,7 @@ void Jendela() {
 
 	//kaca belakang
 	glBegin(GL_POLYGON);
-	glColor3ub(0,0,0);
+	glColor3ub(0, 0, 0);
 	glVertex3f(0.75, 0.01, 1.1);
 	glVertex3f(-1.05, 0.01, 1.1);
 	glVertex3f(-1.05, 0.01, 0);
@@ -1134,19 +1134,19 @@ void Jendela() {
 	glBegin(GL_LINES);
 	glColor3ub(240, 230, 140);
 	glVertex3f(0.79, 0.01, 1);
-	glVertex3f(-1.05 , 0.01, 1);
+	glVertex3f(-1.05, 0.01, 1);
 	glEnd();
 	glBegin(GL_LINES);
 	glVertex3f(0.79, 0.01, 1.1);
-	glVertex3f(-1.05 , 0.01, 1.1);
+	glVertex3f(-1.05, 0.01, 1.1);
 	glEnd();
 	glBegin(GL_LINES);
 	glVertex3f(0.79, 0.01, 0.9);
-	glVertex3f(-1.05 , 0.01, 0.9);
+	glVertex3f(-1.05, 0.01, 0.9);
 	glEnd();
 	glBegin(GL_LINES);
 	glVertex3f(0.79, 0.01, 0.8);
-	glVertex3f(-1.05 , 0.01, 0.8);
+	glVertex3f(-1.05, 0.01, 0.8);
 	glEnd();
 	glBegin(GL_LINES);
 	glVertex3f(0.79, 0.01, 0.7);
@@ -1154,7 +1154,7 @@ void Jendela() {
 	glEnd();
 	glBegin(GL_LINES);
 	glVertex3f(0.79, 0.01, 0.6);
-	glVertex3f(-1.05 , 0.01, 0.6);
+	glVertex3f(-1.05, 0.01, 0.6);
 	glEnd();
 	glBegin(GL_LINES);
 	glVertex3f(0.79, 0.01, 0.5);
@@ -1405,14 +1405,14 @@ void Jendela() {
 	glBegin(GL_POLYGON);
 	glVertex3f(1.01, -0.55, 1.5);
 	glVertex3f(1.01, -0.25, 1.5);
-	glVertex3f(1.01, -0.25, 1.1);  
+	glVertex3f(1.01, -0.25, 1.1);
 	glVertex3f(1.01, -0.55, 1.1);
 	glEnd();
 
-	
+
 	//linenya jendela belakang kanan
 	glBegin(GL_LINES);
-	glColor3ub(240, 230, 140);	
+	glColor3ub(240, 230, 140);
 	glVertex3f(1.01, -2.05, 1);
 	glVertex3f(1.01, -0.25, 1);
 	glEnd();
@@ -1440,7 +1440,7 @@ void Jendela() {
 	glVertex3f(1.01, -2.05, 0.5);
 	glVertex3f(1.01, -0.25, 0.5);
 	glEnd();
-	glBegin(GL_LINES); 
+	glBegin(GL_LINES);
 	glVertex3f(1.01, -2.05, 0.4);
 	glVertex3f(1.01, -0.25, 0.4);
 	glEnd();
@@ -1460,7 +1460,7 @@ void Jendela() {
 	glVertex3f(1.01, -2.05, 0);
 	glVertex3f(1.01, -0.25, 0);
 	glEnd();
-	
+
 	//vertikal kiri berlakang
 	glBegin(GL_LINES);
 	glVertex3f(1.01, -0.25, 1.5);
@@ -1535,7 +1535,7 @@ void Jendela() {
 	glVertex3f(1.01, -1.95, 0);
 	glEnd();
 
-	
+
 	glBegin(GL_LINES);
 	glVertex3f(1.01, -0.6, 1.5);
 	glVertex3f(1.01, -0.25, 1.5);
@@ -1557,7 +1557,7 @@ void Jendela() {
 	glVertex3f(1.01, -2.05, 1.1);
 	glVertex3f(1.01, -0.25, 1.1);
 	glEnd();
-	
+
 }
 
 void strip() {
@@ -1772,4 +1772,4 @@ int main(int argc, char** argv) {
 	glutMainLoop();
 
 	return 0;
-} 
+}
